@@ -1,0 +1,28 @@
+<%- include('template/cabecera', {titulo_web: 'Página Principal'}); %> <%-
+include('template/navbar') %>
+<div class="container">
+  <div class="container">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripci&oacute;n</th>
+          <th scope="col">Acci&oacute;n</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (arrayMascotas.length > 0) { %> <% arrayMascotas.forEach(mascotas
+        => { %>
+        <tr>
+          <th scope="row"><%= mascotas.id %></th>
+          <td><%= mascotas.nombre %></td>
+          <td><%= mascotas.descripcion %></td>
+          <td><button class="btn btn-warning text-white">Editar</button></td>
+        </tr>
+        <% }) %> <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%- include ('template/footer') %>
